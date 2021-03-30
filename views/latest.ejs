@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>life and health</title>
+        <!-- Favicon-->
+        <link rel="icon" type="image/x-icon" href="assets/img/favicon.ico" />
+        <!-- Font Awesome icons (free version)-->
+        <script src="https://use.fontawesome.com/releases/v5.13.0/js/all.js" crossorigin="anonymous"></script>
+        <!-- Google fonts-->
+        <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
+        <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="css/styles.css" rel="stylesheet" />
+        <link href="css/stylez.css" rel="stylesheet" />
+        <link rel="stylesheet" href="/node_modules/owl.carousel/dist/assets/owl.carousel.min.css" />
+        <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300&display=swap" rel="stylesheet"> 
+    </head>
+    <body id="page-top">
+        <!-- Navigation-->
+        <header>
+                <div class="top-bar">
+                    <div class="row">
+                        <div class="col-md-8 col-lg-9 d-flex breaking-news-bar">
+                            <div class="breaking-title"><h6>Trending</h6></div>
+                            <div class="owl-carousel owl-theme owl-loaded breaking">
+                                <div class="owl-stage-outer">
+                                    <!-- <div class="owl-stage">
+                                        <div class="owl-item b-news-item"><a href="#">01.Lorem ipsum dolor sit amet.</a></div>
+                                        <div class="owl-item b-news-item"><a href="#">02.Lorem ipsum dolor sit amet.</a></div>
+                                        <div class="owl-item b-news-item"><a href="#">03.Lorem ipsum dolor sit amet.</a></div>
+                                        <div class="owl-item b-news-item"><a href="#">03.Lorem ipsum dolor sit amet.</a></div>
+                                    </div> -->
+                                </div>
+                                <!-- <div class="owl-nav">
+                                    <div class="owl-prev">
+                                        <i class="fas fa-angle-left"></i>
+                                    </div>
+                                    <div class="owl-next">
+                                            <i class="fas fa-angle-right"></i>
+                                        </div>
+                                </div> -->
+                                <!-- End breaking news -->
+                            </div>
+                        </div>
+                        <div class="col-md-4 col-lg-3 top-bar-social text-md-right text-lg-right">
+                            <ul>
+                                <li><a href="#"><i class="fab fa-facebook"></i></a></li>
+                                <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                                <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <!-- top-bar ends -->
+
+                <div class="header-content">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-4 logo">
+                                <img src="assets/img/portfolio/logo1.png" width="300" height="150" alt="" class="img-fluid">
+                            </div>
+                            <div class="col-md-8">
+                                <img src="assets/img/ad-banner-sample.jpg" alt="" class="img-fluid">
+                            </div>
+                        </div>
+                    </div>
+                    <!-- end header content -->
+
+                    <div class="main-navigation">
+                            <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+                                <div class="container">
+                                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle Navigation">
+                                    <span class="navbar-toggler-icon"></span>
+                                    </button>
+                                    <div class="collapse navbar-collapse" id="navbarNav">
+                                        <div class="navbar-nav">
+                                            <a href="/" class="nav-item nav-link">Home <span class="sr-only">(current</span></a>
+                                            <a href="/featured?page=1&limit=8" class="nav-item nav-link">Feautured</a>
+                                            <a href="/latest?page=1&limit=8" class="nav-item nav-link active">Latest</a>
+                                            <a href="/contact" class="nav-item nav-link">Contact</a>
+                                            <a href="/about" class="nav-item nav-link">About</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </nav>
+                        </div>
+                </div>
+            </header>
+                <div class="container">
+                    <!-- Main row    -->
+                    <div class="row">
+                        <!-- Main Content -->
+                        <div class="col-lg-8 col-md-12">
+                                <div class="block-container">
+                                        <h3 class="block-title">
+                                            <span>Latest articles</span>
+                                        </h3>
+                                        <div class="row mt-4">
+                                            <% articles.forEach((article,index)=>{%>
+                                                <div class="col-lg-6 col-md-6"> 
+                                                    <div class="post-block mt-2">
+                                                        <div class="post-img">
+                                                            <img src="<%-article.articleImgPath%>" class="img-fluid" alt="">
+                                                            <h4><a href="<%-article._id%>"><%-article.title%></a></h4>
+                                                            <div class="meta-info">
+                                                                <div class="author-date">By <a href="#"><span><%-article.author%></span> </a><%-article.date.toLocaleString('el-GR').split(',')[0].split('T')[0]%></div>
+                                                            </div>
+                                                            <p><%-article.description%></p>
+                                                        </div>
+                                                    </div>        
+                                                </div>
+                                            <%})%>
+                                        </div>
+                                    </div>
+                                    <div class="container col-sm-6 mt-5">
+                                        <nav aria-label="Page navigation example">
+                                        <ul class="pagination">
+                                            <li class="page-item"><a class="page-link" href="/latest?page=<%-previous.page%>&limit=<%-previous.limit%>">Previous</a></li>
+                                            <li class="page-item"><a class="page-link" href="/latest?page=1&limit=8">1</a></li>
+                                            <li class="page-item"><a class="page-link" href="/latest?page=<%-next.page%>&limit=<%-next.limit%>">Next</a></li>
+                                        </ul>
+                                        </nav>
+                                    </div>
+                                <!-- Sth else -->
+                                <div class="block-container mt-5">
+                                    <h3 class="block-title">
+                                        <span> Other category </span>
+                                    </h3>
+                                    <div class="row mt-4 mb-4">
+                                        <div class="col-lg-4 col-md-4">
+                                            <div class="cover-container">
+                                                <img src="assets/img/imgsample.jpg" class="img-fluid cover" alt="">
+                                                <div class="hover-content">
+                                                    <div class="dvd-title">
+                                                        Title 1
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                        <div class="col-lg-4 col-md-4">
+                                            <div class="cover-container">
+                                                <img src="assets/img/imgsample.jpg" class="img-fluid cover" alt="">
+                                                <div class="hover-content">
+                                                    <div class="dvd-title">
+                                                        Title 2
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-4 col-md-4">
+                                                <div class="cover-container">
+                                                    <img src="assets/img/imgsample.jpg" class="img-fluid cover" alt="">
+                                                    <div class="hover-content">
+                                                        <div class="dvd-title">
+                                                            Title 3
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                    </div>
+                                </div>
+                                <!-- end sth -->
+                        </div>
+                        <!--End Main Content -->
+
+                        <div class="col-lg-4 col-md-12">
+                            <div class="sidebar">
+                                    <div class="widget">
+                                        <h3 class="widget-title"><a href="/featured?page=1&limit=8">Featured News</a></h3>
+                                        <div class="widget-content">
+                                            <ul class="latest-news">
+                                                <li>
+                                                    <div class="latest-news-item clearfix">
+                                                        <div class="item-thumbnail">
+                                                            <a href="<%- featuredArticles[1-1]._id%>">
+                                                                <img src="<%- featuredArticles[1-1].articleImgPath%>" width="100" height="100" alt="" class="img-fluid">
+                                                            </a>
+                                                        </div>
+                                                        <div class="news-item-container">
+                                                            <h2 class="news-title"><a href="<%- featuredArticles[1-1]._id%>"> <%-featuredArticles[1-1].title%> </a></h2>
+                                                            <div class="news-meta">
+                                                                <span class="news-date"><%-featuredArticles[0].date.toLocaleString('el-GR').split(',')[0].split('T')[0]%></span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="latest-news-item clearfix">
+                                                        <div class="item-thumbnail">
+                                                            <a href="<%- featuredArticles[2-1]._id%>">
+                                                                <img src="<%- featuredArticles[2-1].articleImgPath%>" width="100" height="100" alt="" class="img-fluid">
+                                                            </a>
+                                                        </div>
+                                                        <div class="news-item-container">
+                                                            <h2 class="news-title"><a href="<%- featuredArticles[2-1]._id%>"> <%-featuredArticles[2-1].title%> </a></h2>
+                                                            <div class="news-meta">
+                                                                <span class="news-date"><%-featuredArticles[1].date.toLocaleString('el-GR').split(',')[0].split('T')[0]%></span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="latest-news-item clearfix">
+                                                        <div class="item-thumbnail">
+                                                            <a href="<%- featuredArticles[3-1]._id%>">
+                                                                <img src="<%- featuredArticles[3-1].articleImgPath%>" width="100" height="100" alt="" class="img-fluid">
+                                                            </a>
+                                                        </div>
+                                                        <div class="news-item-container">
+                                                            <h2 class="news-title"><a href="<%- featuredArticles[3-1]._id%>"> <%-featuredArticles[3-1].title%> </a></h2>
+                                                            <div class="news-meta">
+                                                                <span class="news-date"><%-featuredArticles[2].date.toLocaleString('el-GR').split(',')[0].split('T')[0]%></span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="latest-news-item clearfix">
+                                                        <div class="item-thumbnail">
+                                                            <a href="<%- featuredArticles[4-1]._id%>">
+                                                                <img src="<%- featuredArticles[4-1].articleImgPath%>" width="100" height="100" alt="" class="img-fluid">
+                                                            </a>
+                                                        </div>
+                                                        <div class="news-item-container">
+                                                            <h2 class="news-title"><a href="<%- featuredArticles[4-1]._id%>"> <%-featuredArticles[4-1].title%> </a></h2>
+                                                            <div class="news-meta">
+                                                                <span class="news-date"><%-featuredArticles[3].date.toLocaleString('el-GR').split(',')[0].split('T')[0]%></span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                <!-- socialise -->
+                                <div class="widget">
+                                    <h3 class="widget-title">Socialise</h3>
+                                    <div class="widget-content">
+                                        <table>
+                                            <tbody>
+                                                <tr>
+                                                    <td style="background-color:#4263a9;">
+                                                        <i class="fab fa-facebook-f"></i>
+                                                        <p>x</p>
+                                                        <p>likes</p>
+                                                    </td>
+                                                    <td style="background-color:#4263a9;">
+                                                        <i class="fab fa-twitter"></i>
+                                                        <p>x</p>
+                                                        <p>followers</p>
+                                                    </td>
+                                                    <td style="background-color:#4263a9;">
+                                                        <i class="fab fa-instagram"></i>
+                                                        <p>x</p>
+                                                        <p>followers</p>
+                                                    </td>
+                                                    <td style="background-color:#4263a9;">
+                                                        <i class="fab fa-linkedin-in"></i>
+                                                        <p>x</p>
+                                                        <p>contacts</p>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                        <td style="background-color:red;">
+                                                            <i class="fab fa-facebook-f"></i>
+                                                            <p>x</p>
+                                                            <p>likes</p>
+                                                        </td>
+                                                        <td style="background-color:red;">
+                                                            <i class="fab fa-twitter"></i>
+                                                            <p>x</p>
+                                                            <p>followers</p>
+                                                        </td>
+                                                        <td style="background-color:red;">
+                                                            <i class="fab fa-instagram"></i>
+                                                            <p>x</p>
+                                                            <p>followers</p>
+                                                        </td>
+                                                        <td style="background-color:red;">
+                                                            <i class="fab fa-linkedin-in"></i>
+                                                            <p>x</p>
+                                                            <p>contacts</p>
+                                                        </td>
+                                                    </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                                <!-- end of socialise -->
+
+                                <!-- ad widget -->
+                                <div class="widget">
+                                    <div class="widget-content">
+                                        <div class="sidebar-ad">
+                                            <img src="assets/img/imgsample.jpg" height="400" width="310" alt="">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- tags widget -->
+                                <div class="widget">
+                                    <h3 class="widget-title">Popular Tags</h3>
+                                    <div class="widget-content">
+                                        <div class="sidebar-tags">
+                                            <ul>
+                                                <li>Movies</li>
+                                                <li>Tv show</li>
+                                                <li>dvd</li>
+                                                <li>trailers</li>
+                                            </ul>
+                                        </div>
+                                    </div>  
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- End Main Row -->
+                </div>
+                <!-- End Container -->
+                     
+            <section>
+
+            </section>
+
+            <section class="subscription mt-5">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-6 text-white d-flex justify-content-start">
+                            <div class="subscription-icon">
+                                <i class="fas fa-paper-plane fa-3x"></i>
+                            </div>
+                            <div class="subscription-text">
+                                <h3>Subscribe for the newsletter</h3>
+                                <p>no spam only interesting stuff</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <form action="">
+                                    <div class="subscription-form input-group">
+                                            <input type="text" class="form-control form-control-lg" placeholder="YOUR email address" aria-label="YOUR email address" aria-describedby="button-addon2">
+                                            <div class="input-group-append">
+                                              <button class="btn btn-outline-secondary sub-btn" type="button" id="button-addon2">Subscribe</button>
+                                            </div>
+                                          </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <footer class="footer">
+                <div class="widget-container">
+                    <div class="container">
+                        <div class="row mt-1">
+                            <div class="col-md-6 .offset-md-3 about">
+                                <img src="" alt="">
+                                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Architecto quod ipsa fuga dolore, maxime cum quas, consectetur saepe magnam voluptatum consequatur autem dolorem praesentium provident laudantium cupiditate reprehenderit quam porro veritatis voluptas obcaecati esse cumque quasi! Optio eaque maiores repudiandae, ad a, est quasi et mollitia suscipit ut eius nihil!</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="copyright-section">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <p>Copyright © 2020 Name , All Rights Reserved. </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+        </div>
+        <!-- Masthead-->
+
+        <!-- Bootstrap core JS-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.bundle.min.js"></script>
+        <!-- Third party plugin JS-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+        <!-- Contact form JS-->
+        <script src="assets/mail/jqBootstrapValidation.js"></script>
+        <script src="assets/mail/contact_me.js"></script>
+        <!-- Core theme JS-->
+        <script src="js/scripts.js"></script>
+        <script src="js/scriptz.js"></script>
+        <script src="js/html5lightbox.js"></script>
+        <script src="https://kit.fontawesome.com/8d3627f6a9.js" crossorigin="anonymous"></script>
+
+        <script src="/node_modules/jquery/dist/jquery.js"></script>
+        <script src="/node_modules/owl.carousel/dist/owl.carousel.min.js"></script>
+    </body>
+</html>

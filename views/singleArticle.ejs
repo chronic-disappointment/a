@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>life and health</title>
+        <!-- Favicon-->
+        <link rel="icon" type="image/x-icon" href="assets/img/favicon.ico" />
+        <!-- Font Awesome icons (free version)-->
+        <script src="https://use.fontawesome.com/releases/v5.13.0/js/all.js" crossorigin="anonymous"></script>
+        <!-- Google fonts-->
+        <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
+        <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="css/styles.css" rel="stylesheet" />
+        <link href="css/stylez.css" rel="stylesheet" />
+        <link rel="stylesheet" href="/node_modules/owl.carousel/dist/assets/owl.carousel.min.css" />
+        <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300&display=swap" rel="stylesheet"> 
+    </head>
+    <body id="page-top">
+        <!-- Navigation-->
+        <header>
+            <div class="top-bar">
+                <div class="row">
+                    <div class="col-md-8 col-lg-9 d-flex breaking-news-bar">
+                        <div class="breaking-title"><h6>Trending</h6></div>
+                    </div>
+                    <div class="col-md-4 col-lg-3 top-bar-social text-md-right text-lg-right">
+                        <ul>
+                            <li><a href="#"><i class="fab fa-facebook"></i></a></li>
+                            <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                            <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!-- top-bar ends -->
+
+            <div class="header-content">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-4 logo">
+                            <img src="assets/img/portfolio/logo1.png" width="300" height="150" alt="" class="img-fluid">
+                        </div>
+                        <div class="col-md-8">
+                            <img src="assets/img/ad-banner-sample.jpg" alt="" class="img-fluid">
+                        </div>
+                    </div>
+                </div>
+                <!-- end header content -->
+
+                <div class="main-navigation">
+                    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+                        <div class="container">
+                            <div class="row">
+                                <div class="navbar-nav">
+                                    <a href="/" class="col-xl-15 nav-item nav-link">Home <span class="sr-only">(current</span></a>
+                                    <a href="/featured?page=1&limit=8" class="col-xl-15 nav-item nav-link">Feautured</a>
+                                    <a href="/latest?page=1&limit=8" class="col-xl-15 nav-item nav-link">Latest</a>
+                                    <a href="/contact" class="nav-item nav-link">Contact</a>
+                                    <a href="/about" class="nav-item nav-link">About</a>
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </nav>
+                </div>
+            </div>
+        </header>
+            <!-- Page Content -->
+        <div class="container">
+
+            <div class="row">
+
+            <!-- Post Content Column -->
+                <div class="col-sm-8">
+
+                    <!-- Title -->
+                    <!-- <h1 class="mt-4">Post Title</h1> -->
+                    <h1 class="mt-4"><%- singleArticle.title%></h1>
+
+                    <!-- Author -->
+                    <p class="lead">
+                    by
+                    <a href="authors?author=<%-singleArticle.author%>&page=1&limit=8"><%-singleArticle.author%></a>
+                    </p>
+
+                    <hr>
+
+                    <!-- Author -->
+                    <p class="lead">
+                        <h6>tags
+                    <%tagArray.forEach((tag,index)=>{%>
+                        
+                            <a href="tags?tag=<%-tag%>&page=1&limit=8" class="badge badge-info"><%-tag%></a>
+                        </h6>
+                    <%})%>
+                    </p>
+
+                    <hr>
+
+                    <!-- Date/Time -->
+                    <p>Posted on <%-date%></p>
+
+                    <hr>
+
+                    <!-- Preview Image -->
+                    <img class="img-fluid rounded" src="<%-singleArticle.articleImgPath%>" width="500" height="300" alt="">
+
+                    <hr>
+
+                    
+                    <p class="lead"><%-singleArticle.description%></p>
+                    <% pars.forEach(function(par){ %>
+                        <p><%-par%></p>
+                    <% }); %>
+        
+
+                    <hr>
+                    <!-- Sth else -->
+                    <div class="block-container mt-5">
+                        <h3 class="block-title">
+                            <span> Other category </span>
+                        </h3>
+                        <div class="row mt-4 mb-4">
+                            <div class="col-lg-4 col-md-4">
+                                <div class="cover-container">
+                                    <img src="assets/img/imgsample.jpg" class="img-fluid cover" alt="">
+                                    <div class="hover-content">
+                                        <div class="dvd-title">
+                                            Title 1
+                                        </div>
+                                    </div>
+                                    </div>
+
+                            </div>
+                            <div class="col-lg-4 col-md-4">
+                                <div class="cover-container">
+                                    <img src="assets/img/imgsample.jpg" class="img-fluid cover" alt="">
+                                    <div class="hover-content">
+                                        <div class="dvd-title">
+                                            Title 2
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-4">
+                                <div class="cover-container">
+                                    <img src="assets/img/imgsample.jpg" class="img-fluid cover" alt="">
+                                    <div class="hover-content">
+                                        <div class="dvd-title">
+                                            Title 3
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- end sth -->
+                </div>
+            <!--End Main Content -->
+
+            <div class="col-lg-4 col-md-12">
+                <div class="sidebar">
+                        <div class="widget">
+                            <h3 class="widget-title"><a href="/latest?page=1&limit=8">Latest News</a></h3>
+                            <div class="widget-content">
+                                <ul class="latest-news">
+                                    <li>
+                                        <div class="latest-news-item clearfix">
+                                            <div class="item-thumbnail">
+                                                <a href="<%- latestArticles[1-1]._id%>">
+                                                    <img src="<%- latestArticles[1-1].articleImgPath%>" width="100" height="100" alt="" class="img-fluid">
+                                                </a>
+                                            </div>
+                                            <div class="news-item-container">
+                                                <h2 class="news-title"><a href="<%- latestArticles[1-1]._id%>"> <%-latestArticles[1-1].title%> </a></h2>
+                                                <div class="news-meta">
+                                                    <span class="news-date"><%-latestArticles[0].date.toLocaleString('el-GR').split(',')[0].split('T')[0]%></span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="latest-news-item clearfix">
+                                            <div class="item-thumbnail">
+                                                <a href="<%- latestArticles[2-1]._id%>">
+                                                    <img src="<%- latestArticles[2-1].articleImgPath%>" width="100" height="100" alt="" class="img-fluid">
+                                                </a>
+                                            </div>
+                                            <div class="news-item-container">
+                                                <h2 class="news-title"><a href="<%- latestArticles[2-1]._id%>"> <%-latestArticles[2-1].title%> </a></h2>
+                                                <div class="news-meta">
+                                                    <span class="news-date"><%-latestArticles[1].date.toLocaleString('el-GR').split(',')[0].split('T')[0]%></span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="latest-news-item clearfix">
+                                            <div class="item-thumbnail">
+                                                <a href="<%- latestArticles[3-1]._id%>">
+                                                    <img src="<%- latestArticles[3-1].articleImgPath%>" width="100" height="100" alt="" class="img-fluid">
+                                                </a>
+                                            </div>
+                                            <div class="news-item-container">
+                                                <h2 class="news-title"><a href="<%- latestArticles[3-1]._id%>"> <%-latestArticles[3-1].title%> </a></h2>
+                                                <div class="news-meta">
+                                                    <span class="news-date"><%-latestArticles[2].date.toLocaleString('el-GR').split(',')[0].split('T')[0]%></span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="latest-news-item clearfix">
+                                            <div class="item-thumbnail">
+                                                <a href="<%- latestArticles[4-1]._id%>">
+                                                    <img src="<%- latestArticles[4-1].articleImgPath%>" width="100" height="100" alt="" class="img-fluid">
+                                                </a>
+                                            </div>
+                                            <div class="news-item-container">
+                                                <h2 class="news-title"><a href="<%- latestArticles[4-1]._id%>"> <%-latestArticles[4-1].title%> </a></h2>
+                                                <div class="news-meta">
+                                                    <span class="news-date"><%-latestArticles[3].date.toLocaleString('el-GR').split(',')[0].split('T')[0]%></span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    <!-- socialise -->
+                    <div class="widget">
+                        <h3 class="widget-title">Socialise</h3>
+                        <div class="widget-content">
+                            <table>
+                                <tbody>
+                                    <tr>
+                                        <td style="background-color:#4263a9;">
+                                            <i class="fab fa-facebook-f"></i>
+                                            <p>x</p>
+                                            <p>likes</p>
+                                        </td>
+                                        <td style="background-color:#4263a9;">
+                                            <i class="fab fa-twitter"></i>
+                                            <p>x</p>
+                                            <p>followers</p>
+                                        </td>
+                                        <td style="background-color:#4263a9;">
+                                            <i class="fab fa-instagram"></i>
+                                            <p>x</p>
+                                            <p>followers</p>
+                                        </td>
+                                        <td style="background-color:#4263a9;">
+                                            <i class="fab fa-linkedin-in"></i>
+                                            <p>x</p>
+                                            <p>contacts</p>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                            <td style="background-color:red;">
+                                                <i class="fab fa-facebook-f"></i>
+                                                <p>x</p>
+                                                <p>likes</p>
+                                            </td>
+                                            <td style="background-color:red;">
+                                                <i class="fab fa-twitter"></i>
+                                                <p>x</p>
+                                                <p>followers</p>
+                                            </td>
+                                            <td style="background-color:red;">
+                                                <i class="fab fa-instagram"></i>
+                                                <p>x</p>
+                                                <p>followers</p>
+                                            </td>
+                                            <td style="background-color:red;">
+                                                <i class="fab fa-linkedin-in"></i>
+                                                <p>x</p>
+                                                <p>contacts</p>
+                                            </td>
+                                        </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                                <!-- end of socialise -->
+
+                                <!-- ad widget -->
+                                <div class="widget">
+                                    <div class="widget-content">
+                                        <div class="sidebar-ad">
+                                            <img src="assets/img/imgsample.jpg" height="400" width="310" alt="">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- tags widget -->
+                                <div class="widget">
+                                    <h3 class="widget-title">Popular Tags</h3>
+                                    <div class="widget-content">
+                                        <div class="sidebar-tags">
+                                            <ul>
+                                                <li>Movies</li>
+                                                <li>Tv show</li>
+                                                <li>dvd</li>
+                                                <li>trailers</li>
+                                            </ul>
+                                        </div>
+                                    </div>  
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- End Main Row -->
+                </div>
+                <!-- End Container -->
+            <section class="subscription mt-5">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-6 text-white d-flex justify-content-start">
+                            <div class="subscription-icon">
+                                <i class="fas fa-paper-plane fa-3x"></i>
+                            </div>
+                            <div class="subscription-text">
+                                <h3>Subscribe for the newsletter</h3>
+                                <p>no spam only interesting stuff</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <form action="">
+                                    <div class="subscription-form input-group">
+                                            <input type="text" class="form-control form-control-lg" placeholder="YOUR email address" aria-label="YOUR email address" aria-describedby="button-addon2">
+                                            <div class="input-group-append">
+                                              <button class="btn btn-outline-secondary sub-btn" type="button" id="button-addon2">Subscribe</button>
+                                            </div>
+                                          </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <footer class="footer">
+                <div class="widget-container">
+                    <div class="container">
+                        <div class="row mt-1">
+                            <div class="col-md-6 .offset-md-3 about">
+                                <img src="" alt="">
+                                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Architecto quod ipsa fuga dolore, maxime cum quas, consectetur saepe magnam voluptatum consequatur autem dolorem praesentium provident laudantium cupiditate reprehenderit quam porro veritatis voluptas obcaecati esse cumque quasi! Optio eaque maiores repudiandae, ad a, est quasi et mollitia suscipit ut eius nihil!</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="copyright-section">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <p>Copyright © 2020 Name , All Rights Reserved. </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+        </div>
+        <!-- Masthead-->
+
+        <!-- Bootstrap core JS-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.bundle.min.js"></script>
+        <!-- Third party plugin JS-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+        <!-- Contact form JS-->
+        <script src="assets/mail/jqBootstrapValidation.js"></script>
+        <script src="assets/mail/contact_me.js"></script>
+        <!-- Core theme JS-->
+        <script src="js/scripts.js"></script>
+        <script src="js/scriptz.js"></script>
+        <script src="js/html5lightbox.js"></script>
+        <script src="https://kit.fontawesome.com/8d3627f6a9.js" crossorigin="anonymous"></script>
+
+        <script src="/node_modules/jquery/dist/jquery.js"></script>
+        <script src="/node_modules/owl.carousel/dist/owl.carousel.min.js"></script>
+    </body>
+</html>
